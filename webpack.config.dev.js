@@ -1,26 +1,27 @@
-const webpack = require('webpack');
-
 module.exports = {
   mode: 'development',
   entry: './src/app.js',
+  devtool: 'inline-source-map',
   output: {
-    path: __dirname + '/build',
-    filename: 'bundle.js'
+    path: `${__dirname}/build`,
+    filename: 'bundle.js',
+    publicPath: '/',
   },
   module: {
     rules: [{
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        options: {
-          plugins: ['transform-runtime'],
-          presets: ['es2015', 'react', 'stage-2']
-        }
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: 'babel-loader',
+      options: {
+        plugins: ['transform-runtime'],
+        presets: ['es2015', 'react', 'stage-2'],
       },
-      {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader'
-      }
-    ]
-  }
+    },
+    {
+      test: /\.css$/,
+      loader: 'style-loader!css-loader',
+    },
+    ],
+  },
+  plugins: [],
 };
