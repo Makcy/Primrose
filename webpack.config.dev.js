@@ -2,12 +2,16 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
+const ROOT_PATH = path.resolve(__dirname);
+const ENTRY_PATH = path.resolve(ROOT_PATH, 'app');
+const OUTPUT_PATH = path.resolve(ROOT_PATH, 'build');
+
 module.exports = {
   mode: 'development',
-  entry: './src/app.js',
+  entry: path.resolve(ENTRY_PATH, 'index.js'),
   devtool: 'inline-source-map',
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: OUTPUT_PATH,
     filename: 'bundle.js',
     publicPath: '/',
   },
@@ -31,7 +35,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Primorse Demo',
-      template: path.resolve(__dirname, 'index.html'),
+      template: path.resolve(ROOT_PATH, 'index.html'),
       showErrors: true,
     }),
   ],
