@@ -15,7 +15,7 @@ module.exports = {
       ref: 'origin/master',
       repo: 'git@github.com:Makcy/Primrose.git',
       path: '/var/www/production',
-      'post-deploy': 'yarn install && pm2 reload ecosystem.config.js --env production',
+      'post-deploy': 'yarn install && pm2 reload echosystem.config.js --env production',
       env: {
         NODE_ENV: 'production',
       },
