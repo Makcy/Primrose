@@ -10,10 +10,14 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hello World</h1>
+        <h1>Hello Primrose</h1>
       </div>
     );
   }
 }
+
+const div = document.createElement('div');
+div.setAttribute('id', 'app');
+document.body.appendChild(div);
 
 ReactDom.render(<App />, document.getElementById('app'));
