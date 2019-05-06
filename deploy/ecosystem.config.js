@@ -10,8 +10,8 @@ module.exports = {
 
   deploy: {
     production: {
-      user: 'makcy',
-      host: '212.83.163.1',
+      user: 'root',
+      host: '106.12.83.183',
       ref: 'origin/master',
       repo: 'git@github.com:Makcy/Primrose.git',
       path: '/var/www/production',
