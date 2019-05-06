@@ -13,10 +13,7 @@ const isProd = process.env.NODE_ENV === 'production';
 const complier = isProd ? webpack(prodConfig) : webpack(devConfig);
 
 app.use('/', express.static(path.join(__dirname, 'build')));
-app.use('/', express.static(path.join(__dirname, 'static')));
-// app.get('/', (req, res) => {
-//   res.sendFile(path.resolve(__dirname, 'index.html'));
-// });
+app.use('/', express.static(path.join(__dirname, 'public')));
 
 console.log(`Current Environment -  ${process.env.NODE_ENV}`);
 if (!isProd) {

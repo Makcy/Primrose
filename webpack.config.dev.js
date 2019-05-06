@@ -31,6 +31,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Primorse Demo',
+      template: path.resolve(__dirname, 'index.html'),
       showErrors: true,
     }),
   ],
