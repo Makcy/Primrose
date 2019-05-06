@@ -1,7 +1,7 @@
 module.exports = {
   apps: [{
     name: 'Primrose',
-    script: '../server.js',
+    script: 'server.js',
     instances: 4,
     autorestart: true,
     watch: false,
@@ -15,7 +15,7 @@ module.exports = {
       ref: 'origin/master',
       repo: 'git@github.com:Makcy/Primrose.git',
       path: '/var/www/production',
-      'post-deploy': 'git pull && yarn install && pm2 startOrReload deploy/echosystem.config.js --env production',
+      'post-deploy': 'yarn install && pm2 startOrReload deploy/echosystem.config.js --env production',
       env: {
         NODE_ENV: 'production',
       },
