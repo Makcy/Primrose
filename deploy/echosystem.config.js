@@ -2,9 +2,6 @@ module.exports = {
   apps: [{
     name: 'Primrose',
     script: 'server.js',
-    instances: 1,
-    autorestart: true,
-    watch: false,
     log_date_format: 'YYYY-MM-DD HH:mm Z',
   }],
 
