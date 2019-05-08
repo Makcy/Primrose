@@ -1,5 +1,5 @@
 module.exports = {
-  // parser: 'babel-eslint',
+  parser: 'babel-eslint',
   env: {
     browser: true,
     es6: true,
@@ -13,7 +13,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 2015,
+    ecmaVersion: 6,
   },
   plugins: [
     'react',
