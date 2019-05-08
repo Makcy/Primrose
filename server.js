@@ -1,8 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const express = require('express');
 const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
-const webpackHotMiddleware = require('webpack-hot-middleware');
 const path = require('path');
 const devConfig = require('./webpack.config.dev');
 const prodConfig = require('./webpack.config.prod');
@@ -17,6 +15,8 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 
 console.log(`Current Environment -  ${process.env.NODE_ENV}`);
 if (!isProd) {
+  const webpackDevMiddleware = require('webpack-dev-middleware');
+  const webpackHotMiddleware = require('webpack-hot-middleware');
   app.use(webpackDevMiddleware(complier, {
     publicPath: devConfig.output.publicPath,
   }));
