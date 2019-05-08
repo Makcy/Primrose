@@ -4,7 +4,7 @@ import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './reducers';
-import RootApp from './containers';
+import AppRoot from './containers';
 
 const store = createStore(rootReducer);
 
@@ -14,7 +14,7 @@ document.body.appendChild(div);
 
 ReactDom.render(
   <Provider store={store}>
-    <RootApp />
+    <AppRoot />
   </Provider>,
   document.getElementById('app'),
 );

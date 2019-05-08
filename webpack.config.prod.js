@@ -17,9 +17,12 @@ module.exports = {
   },
   module: {
     rules: [{
-      test: /\.js$/,
+      test: /\.(js|jsx)$/,
       exclude: /node_modules/,
       loader: 'babel-loader',
+      resolve: {
+        extensions: ['.js', '.jsx'],
+      },
       options: {
         plugins: ['transform-runtime'],
         presets: ['es2015', 'react', 'stage-2'],

@@ -20,6 +20,8 @@ module.exports = {
   ],
   rules: {
     'react/jsx-filename-extension': [1, { 'extensions': ['.js', '.jsx'] }],
-    'global-require': [1]
+    'react/prefer-stateless-function': [0],
+    'global-require': [0],
+    // "import/prefer-default-export": [0]
   },
 };

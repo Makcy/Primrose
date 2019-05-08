@@ -1,43 +1,20 @@
-import React, { Component, PureComponent } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import {
+  BrowserRouter as Router,
+} from 'react-router-dom';
+import {
+  MainPage,
+} from '../components';
 
-class AppIndex extends PureComponent {
+class AppRoot extends Component {
   render() {
-    const { value, onSaveWorld } = this.props;
     return (
-      <div>
-        <span>
-          Hello
-          {value}
-        </span>
-        <button type="button" onClick={onSaveWorld}>Save World</button>
-      </div>
+      <Router>
+        <MainPage />
+      </Router>
     );
   }
 }
 
-AppIndex.propTypes = {
-  value: PropTypes.string.isRequired,
-  onSaveWorld: PropTypes.func.isRequired,
-};
-
-function mapStateToProps(state) {
-  return {
-    value: state.value,
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    //  get actions from import
-    onSaveWorld: () => dispatch({
-      type: 'SAVE_WORLD',
-    }),
-  };
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(AppIndex);
+export default connect()(AppRoot);
