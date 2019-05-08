@@ -30,7 +30,18 @@ module.exports = {
     },
     {
       test: /\.css$/,
-      loader: 'style-loader!css-loader',
+      use: [
+        { loader: 'style-loader' },
+        { loader: 'css-loader', options: { sourceMap: true, modules: true, localIdentName: '[name]__[local]___[hash:base64:5]' } },
+      ],
+    },
+    {
+      test: /\.scss$/,
+      use: [
+        { loader: 'style-loader' },
+        { loader: 'css-loader', options: { sourceMap: true, modules: true, localIdentName: '[name]__[local]___[hash:base64:5]' } },
+        { loader: 'sass-loader', options: { sourceMap: true } },
+      ],
     },
     ],
   },
