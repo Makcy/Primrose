@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-export default class TopMenu extends Component {
+export default class Footer extends Component {
   render() {
     return (
-      <div>TopMenu</div>
+      <div>Footer</div>
     );
   }
 }

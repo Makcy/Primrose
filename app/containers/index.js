@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import {
   BrowserRouter as Router,
 } from 'react-router-dom';
-import {
-  MainPage,
-} from '../components';
+import MainPage from '../components/MainPage/MainPage';
 
 class AppRoot extends Component {
   render() {
