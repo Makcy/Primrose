@@ -8,10 +8,10 @@ import AppRoot from './containers';
 
 const store = createStore(rootReducer);
 
-const div = document.createElement('div');
-div.setAttribute('id', 'app');
-document.body.appendChild(div);
-document.body.style.margin = 0;
+// const div = document.createElement('div');
+// div.setAttribute('id', 'app');
+// document.body.appendChild(div);
+// document.body.style.margin = 0;
 
 ReactDom.render(
   <Provider store={store}>
