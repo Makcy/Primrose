@@ -12,10 +12,22 @@ export default class MainPage extends Component {
       header: {
         title: '不忘初心，方得始终',
         nav: [
-          '首页',
-          '归档',
-          '标签',
-          '关于',
+          {
+            tip: '首页',
+            icon: 'fa fa-home fa-fw',
+          },
+          {
+            tip: '归档',
+            icon: 'fa fa-archive fa-fw',
+          },
+          {
+            tip: '标签',
+            icon: 'fa fa-tags fa-fw',
+          },
+          {
+            tip: '关于',
+            icon: 'fa fa-user fa-fw',
+          },
         ],
       },
     };

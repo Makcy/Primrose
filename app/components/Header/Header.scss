@@ -5,13 +5,45 @@
 }
 
 .header-linner {
+  display: flex;
+  justify-content: space-between;
   padding: 10px;
-}
-
-.title {
-  span {
-    font-size: 22px;
-    font-weight: bloder;
-    font-family: 'Lato', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  margin: 0 30px;
+  .title {
+    display: flex;
+    align-items: center;
+    span {
+      font-size: 22px;
+      font-weight: bloder;
+      font-family: 'Lato', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    }
+  }
+  .nav {
+    .menuItem {
+      display: inline-block;
+      margin-right: 10px;
+      font-size: 13px;
+      .fa {
+        margin-right: 5px;
+      }
+      .menuItemIcon {
+        display: block;
+        margin-right: 5px;
+      }
+      a {
+        display: block;
+        text-decoration: none;
+        color: #555555;
+        padding: 0 10px;
+        &:hover {
+          background: #cccccc;
+          transition-property: background;
+          transition-duration: 0.2s;
+          transition-timing-function: ease-in-out;
+          transition-delay: 0s;
+          border-radius: 2px;
+        }
+      }
+    }
   }
 }
