@@ -7,8 +7,8 @@
 .header-linner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px;
-  margin: 0 30px;
   .title {
     display: flex;
     align-items: center;
@@ -18,7 +18,32 @@
       font-family: 'Lato', 'PingFang SC', 'Microsoft YaHei', sans-serif;
     }
   }
+  .site-nav-toggle {
+    @media only screen and (min-width: 768px) {
+      display: none;
+    }
+    display: flex;
+    align-items: center;
+    button {
+      padding: 0 0;
+      background: transparent;
+      border: none;
+    }
+    .btn-bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #555555;
+      border-radius: 1px;
+    }
+    .btn-bar + .btn-bar {
+      margin-top: 4px;
+    }
+  }
   .nav {
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
     .menuItem {
       display: inline-block;
       margin-right: 10px;
@@ -27,7 +52,6 @@
         margin-right: 5px;
       }
       .menuItemIcon {
-        display: block;
         margin-right: 5px;
       }
       a {
