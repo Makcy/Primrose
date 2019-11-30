@@ -1,7 +1,7 @@
 {
   "name": "Primrose",
   "version": "1.0.0",
-  "private": true,
+  "preaivate": true,
   "author": "Makcy <work@zhouxiao.me>",
   "license": "MIT",
   "scripts": {
@@ -25,10 +25,11 @@
     "html-webpack-plugin": "^3.2.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4",
+    "react-dom": "^16.12.0",
     "react-redux": "^6.0.1",
     "react-router-dom": "^5.0.0",
     "redux": "^4.0.1",
+    "redux-immutable-state-invariant": "^2.1.0",
     "redux-logger": "^3.0.6",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
