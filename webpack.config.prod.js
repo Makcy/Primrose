@@ -13,7 +13,7 @@ module.exports = {
   output: {
     path: OUTPUT_PATH,
     filename: 'bundle.js',
-    publicPath: '/',
+    publicPath: '',
   },
   module: {
     rules: [{
@@ -30,17 +30,33 @@ module.exports = {
     },
     {
       test: /\.css$/,
+      exclude: /node_modules/,
       use: [
         { loader: 'style-loader' },
-        { loader: 'css-loader', options: { modules: true } },
+        { loader: 'css-loader', options: { modules: true, importLoaders: 1 } },
       ],
     },
     {
       test: /\.scss$/,
+      exclude: /node_modules/,
       use: [
         { loader: 'style-loader' },
         { loader: 'css-loader', options: { modules: true } },
         { loader: 'sass-loader' },
+      ],
+    },
+    {
+      test: /\.less$/,
+      include: path.resolve(__dirname, 'node_modules'),
+      use: [
+        { loader: 'style-loader' },
+        { loader: 'css-loader' },
+        {
+          loader: 'less-loader',
+          options: {
+            javascriptEnabled: true,
+          },
+        },
       ],
     },
     ],
@@ -49,6 +65,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(ROOT_PATH, 'index.html'),
+      favicon: path.resolve(ROOT_PATH, 'public/favicon.ico'),
       showErrors: true,
     }),
   ],

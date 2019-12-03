@@ -26,4 +26,5 @@ if (!isProd) {
 
 app.listen(3000, () => {
   console.log('Server Start: http://localhost:3000');
+  console.log('webpack compiling...');
 });

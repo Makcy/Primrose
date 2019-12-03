@@ -13,7 +13,7 @@ module.exports = {
   output: {
     path: OUTPUT_PATH,
     filename: 'bundle.js',
-    publicPath: '/',
+    publicPath: '',
   },
   module: {
     rules: [{
@@ -30,17 +30,37 @@ module.exports = {
     },
     {
       test: /\.css$/,
+      exclude: /node_modules/,
       use: [
         { loader: 'style-loader' },
-        { loader: 'css-loader', options: { sourceMap: true, modules: true, localIdentName: '[name]__[local]___[hash:base64:5]' } },
+        { loader: 'css-loader' },
       ],
     },
     {
       test: /\.scss$/,
       use: [
         { loader: 'style-loader' },
-        { loader: 'css-loader', options: { sourceMap: true, modules: true, localIdentName: '[name]__[local]___[hash:base64:5]' } },
+        {
+          loader: 'css-loader',
+          options: {
+            sourceMap: true, modules: true, localIdentName: '[name]__[local]___[hash:base64:5]',
+          },
+        },
         { loader: 'sass-loader', options: { sourceMap: true } },
+      ],
+    },
+    {
+      test: /\.less$/,
+      include: /node_modules/,
+      use: [
+        { loader: 'style-loader' },
+        { loader: 'css-loader' },
+        {
+          loader: 'less-loader',
+          options: {
+            javascriptEnabled: true,
+          },
+        },
       ],
     },
     ],
@@ -49,6 +69,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(ROOT_PATH, 'index.html'),
+      favicon: path.resolve(ROOT_PATH, 'public/favicon.ico'),
       showErrors: true,
     }),
   ],
