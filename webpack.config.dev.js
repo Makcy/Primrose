@@ -33,7 +33,12 @@ module.exports = {
       exclude: /node_modules/,
       use: [
         { loader: 'style-loader' },
-        { loader: 'css-loader' },
+        {
+          loader: 'css-loader',
+          options: {
+            sourceMap: true, modules: true, localIdentName: '[name]__[local]___[hash:base64:5]',
+          },
+        },
       ],
     },
     {
@@ -62,6 +67,10 @@ module.exports = {
           },
         },
       ],
+    },
+    {
+      test: /.(jpg|png)$/,
+      use: ['url-loader'],
     },
     ],
   },
