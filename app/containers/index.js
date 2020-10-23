@@ -5,7 +5,7 @@ class AppRoot extends Component {
   render() {
     return (
       <div>
-        <span>Hello World</span>
+        <h1>Hello World</h1>
       </div>
     );
   }
